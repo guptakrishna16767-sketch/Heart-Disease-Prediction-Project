@@ -1067,13 +1067,3 @@ if predict:
         the information provided.
         """
     )
-
-
-    # =====================================================
-    # DISCLAIMER
-    # =====================================================
-
-    st.warning(
-        "⚠️ This application is for educational purposes only "
-        "and should not replace professional medical advice."
-    )
