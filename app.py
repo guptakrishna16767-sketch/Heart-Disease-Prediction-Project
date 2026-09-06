@@ -128,6 +128,7 @@ h6 {
     color: #ffffff !important;
     font-weight: 700 !important;
     font-size: 14px !important;
+    opacity: 1 !important;
 }
 
 
@@ -142,7 +143,7 @@ div[data-testid="stNumberInput"] {
 
 /* Input box */
 
-div[data-baseweb="input"] {
+div[data-testid="stNumberInput"] div[data-baseweb="input"] {
     background-color: #1e293b !important;
 
     border: 1px solid #475569 !important;
@@ -153,7 +154,10 @@ div[data-baseweb="input"] {
 
 /* Input text */
 
-div[data-baseweb="input"] input {
+div[data-testid="stNumberInput"]
+div[data-baseweb="input"]
+input {
+
     color: #ffffff !important;
 
     -webkit-text-fill-color: #ffffff !important;
@@ -165,12 +169,16 @@ div[data-baseweb="input"] input {
     font-weight: 600 !important;
 
     caret-color: #22d3ee !important;
+
+    opacity: 1 !important;
 }
 
 
 /* Input focus */
 
+div[data-testid="stNumberInput"]
 div[data-baseweb="input"]:focus-within {
+
     border-color: #22d3ee !important;
 
     box-shadow:
@@ -183,6 +191,7 @@ div[data-baseweb="input"]:focus-within {
    ===================================================== */
 
 div[data-testid="stNumberInput"] button {
+
     background-color: #1e293b !important;
 
     color: #ffffff !important;
@@ -192,6 +201,7 @@ div[data-testid="stNumberInput"] button {
 
 
 div[data-testid="stNumberInput"] button svg {
+
     fill: #ffffff !important;
 
     color: #ffffff !important;
@@ -199,6 +209,7 @@ div[data-testid="stNumberInput"] button svg {
 
 
 div[data-testid="stNumberInput"] button:hover {
+
     background-color: #334155 !important;
 }
 
@@ -210,8 +221,14 @@ div[data-testid="stNumberInput"] button:hover {
 /* Selectbox label */
 
 div[data-testid="stSelectbox"] label {
+
     color: #ffffff !important;
+
     font-weight: 700 !important;
+
+    font-size: 14px !important;
+
+    opacity: 1 !important;
 }
 
 
@@ -220,15 +237,15 @@ div[data-testid="stSelectbox"] label {
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] {
 
-    color: #ffffff !important;
-
     background-color: #1e293b !important;
 
-    border-radius: 12px !important;
+    color: #ffffff !important;
+
+    opacity: 1 !important;
 }
 
 
-/* Selectbox inner container */
+/* Visible selectbox */
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] > div {
@@ -240,26 +257,14 @@ div[data-baseweb="select"] > div {
     border-radius: 12px !important;
 
     color: #ffffff !important;
+
+    opacity: 1 !important;
 }
 
 
 /* =====================================================
-   SELECTED VALUE - IMPORTANT
+   SELECTED VALUE - STRONG WHITE FIX
    ===================================================== */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]
-span {
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
-
-    font-weight: 600 !important;
-}
-
-
-/* Combobox text */
 
 div[data-testid="stSelectbox"]
 [role="combobox"] {
@@ -267,10 +272,64 @@ div[data-testid="stSelectbox"]
     color: #ffffff !important;
 
     -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
 }
 
 
-/* Everything inside selectbox */
+div[data-testid="stSelectbox"]
+[role="combobox"] div {
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
+}
+
+
+div[data-testid="stSelectbox"]
+[role="combobox"] span {
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
+}
+
+
+div[data-testid="stSelectbox"]
+[role="combobox"] input {
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
+}
+
+
+/* =====================================================
+   SINGLE VALUE
+   ===================================================== */
+
+div[data-testid="stSelectbox"]
+div[class*="singleValue"] {
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
+
+    font-weight: 600 !important;
+}
+
+
+/* =====================================================
+   ALL SELECTBOX TEXT
+   ===================================================== */
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] * {
@@ -278,10 +337,14 @@ div[data-baseweb="select"] * {
     color: #ffffff !important;
 
     -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
 }
 
 
-/* Selectbox arrow */
+/* =====================================================
+   SELECTBOX ARROW
+   ===================================================== */
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] svg {
@@ -289,6 +352,8 @@ div[data-baseweb="select"] svg {
     fill: #ffffff !important;
 
     color: #ffffff !important;
+
+    opacity: 1 !important;
 }
 
 
@@ -302,48 +367,49 @@ div[data-baseweb="popover"] {
 }
 
 
-div[data-baseweb="popover"] * {
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
-}
-
-
-div[data-baseweb="popover"] ul {
+div[data-baseweb="popover"] [role="listbox"] {
 
     background-color: #1e293b !important;
 }
 
 
-div[data-baseweb="popover"] li {
+div[data-baseweb="popover"] [role="option"] {
 
     background-color: #1e293b !important;
 
     color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
 }
 
 
-div[data-baseweb="popover"] li span {
+div[data-baseweb="popover"] [role="option"] * {
 
     color: #ffffff !important;
 
     -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
 }
 
 
 /* Dropdown hover */
 
-div[data-baseweb="popover"] li:hover {
+div[data-baseweb="popover"]
+[role="option"]:hover {
 
     background-color: #334155 !important;
+
+    color: #ffffff !important;
 }
 
 
 /* Selected dropdown option */
 
 div[data-baseweb="popover"]
-li[aria-selected="true"] {
+[role="option"][aria-selected="true"] {
 
     background-color: #2563eb !important;
 
@@ -352,9 +418,11 @@ li[aria-selected="true"] {
 
 
 div[data-baseweb="popover"]
-li[aria-selected="true"] span {
+[role="option"][aria-selected="true"] * {
 
     color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
 }
 
 
@@ -384,7 +452,7 @@ li[aria-selected="true"] span {
 
     font-size: 18px;
 
-    font-weight: 800;
+    font-weight: 800 !important;
 
     box-shadow:
         0 8px 25px rgba(37, 99, 235, 0.35);
@@ -493,22 +561,27 @@ hr {
    ===================================================== */
 
 ::-webkit-scrollbar {
+
     width: 8px;
 }
 
 
 ::-webkit-scrollbar-track {
+
     background: #020617;
 }
 
 
 ::-webkit-scrollbar-thumb {
+
     background: #334155;
+
     border-radius: 10px;
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
+
     background: #22d3ee;
 }
 
@@ -518,11 +591,13 @@ hr {
    ===================================================== */
 
 #MainMenu {
+
     visibility: hidden;
 }
 
 
 footer {
+
     visibility: hidden;
 }
 
@@ -565,7 +640,7 @@ try:
         "columns.pkl"
     )
 
-except Exception:
+except Exception as e:
 
     st.error(
         "❌ Model files could not be loaded."
@@ -581,6 +656,8 @@ except Exception:
         • columns.pkl
         """
     )
+
+    st.exception(e)
 
     st.stop()
 
