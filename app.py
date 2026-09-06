@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 import joblib
+
 
 # =========================================================
 # PAGE CONFIG
@@ -12,6 +12,7 @@ st.set_page_config(
     page_icon="❤️",
     layout="centered"
 )
+
 
 # =========================================================
 # CUSTOM CSS
@@ -33,7 +34,7 @@ st.markdown("""
         ),
         radial-gradient(
             circle at 95% 5%,
-            rgba(139, 92, 246, 0.20),
+            rgba(124, 58, 237, 0.20),
             transparent 30%
         ),
         linear-gradient(
@@ -50,9 +51,9 @@ st.markdown("""
    ===================================================== */
 
 .block-container {
-    max-width: 900px;
-    padding-top: 35px;
-    padding-bottom: 50px;
+    max-width: 980px !important;
+    padding-top: 35px !important;
+    padding-bottom: 50px !important;
 }
 
 
@@ -102,8 +103,8 @@ h6 {
     background:
         linear-gradient(
             145deg,
-            rgba(15, 23, 42, 0.97),
-            rgba(30, 41, 59, 0.90)
+            rgba(15, 23, 42, 0.98),
+            rgba(30, 41, 59, 0.94)
         );
 
     padding: 30px;
@@ -137,52 +138,58 @@ h6 {
    ===================================================== */
 
 div[data-testid="stNumberInput"] {
-    color: #ffffff !important;
+    color: #111827 !important;
 }
 
 
-/* Input box */
+/* Number input box */
 
-div[data-testid="stNumberInput"] div[data-baseweb="input"] {
-    background-color: #1e293b !important;
+div[data-testid="stNumberInput"]
+div[data-baseweb="input"] {
 
-    border: 1px solid #475569 !important;
+    background-color: #f8fafc !important;
+
+    border: 1px solid #cbd5e1 !important;
 
     border-radius: 12px !important;
+
+    color: #111827 !important;
+
+    min-height: 45px !important;
 }
 
 
-/* Input text */
+/* Number input value */
 
 div[data-testid="stNumberInput"]
 div[data-baseweb="input"]
 input {
 
-    color: #ffffff !important;
+    background-color: #f8fafc !important;
 
-    -webkit-text-fill-color: #ffffff !important;
+    color: #111827 !important;
 
-    background-color: #1e293b !important;
+    -webkit-text-fill-color: #111827 !important;
 
     font-size: 15px !important;
 
     font-weight: 600 !important;
 
-    caret-color: #22d3ee !important;
-
     opacity: 1 !important;
+
+    caret-color: #2563eb !important;
 }
 
 
-/* Input focus */
+/* Number input focus */
 
 div[data-testid="stNumberInput"]
 div[data-baseweb="input"]:focus-within {
 
-    border-color: #22d3ee !important;
+    border-color: #2563eb !important;
 
     box-shadow:
-        0 0 12px rgba(34, 211, 238, 0.25) !important;
+        0 0 10px rgba(37, 99, 235, 0.25) !important;
 }
 
 
@@ -215,10 +222,8 @@ div[data-testid="stNumberInput"] button:hover {
 
 
 /* =====================================================
-   SELECTBOX
+   SELECTBOX LABEL
    ===================================================== */
-
-/* Selectbox label */
 
 div[data-testid="stSelectbox"] label {
 
@@ -232,111 +237,112 @@ div[data-testid="stSelectbox"] label {
 }
 
 
-/* Main selectbox */
+/* =====================================================
+   SELECTBOX WHITE BOX
+   ===================================================== */
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] {
 
-    background-color: #1e293b !important;
+    background-color: #f8fafc !important;
 
-    color: #ffffff !important;
+    border-radius: 12px !important;
+
+    color: #111827 !important;
 
     opacity: 1 !important;
 }
 
 
-/* Visible selectbox */
+/* Inner selectbox */
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] > div {
 
-    background-color: #1e293b !important;
+    background-color: #f8fafc !important;
 
-    border: 1px solid #475569 !important;
+    border: 1px solid #cbd5e1 !important;
 
     border-radius: 12px !important;
 
-    color: #ffffff !important;
+    min-height: 45px !important;
+
+    color: #111827 !important;
 
     opacity: 1 !important;
 }
 
 
 /* =====================================================
-   SELECTED VALUE - STRONG WHITE FIX
+   SELECTED VALUE - BLACK
    ===================================================== */
 
+/* Combobox */
+
 div[data-testid="stSelectbox"]
+div[data-baseweb="select"]
 [role="combobox"] {
 
-    color: #ffffff !important;
+    color: #111827 !important;
 
-    -webkit-text-fill-color: #ffffff !important;
-
-    opacity: 1 !important;
-}
-
-
-div[data-testid="stSelectbox"]
-[role="combobox"] div {
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
+    -webkit-text-fill-color: #111827 !important;
 
     opacity: 1 !important;
 }
 
 
+/* Combobox children */
+
 div[data-testid="stSelectbox"]
-[role="combobox"] span {
+div[data-baseweb="select"]
+[role="combobox"] * {
 
-    color: #ffffff !important;
+    color: #111827 !important;
 
-    -webkit-text-fill-color: #ffffff !important;
+    -webkit-text-fill-color: #111827 !important;
 
     opacity: 1 !important;
 }
 
 
-div[data-testid="stSelectbox"]
-[role="combobox"] input {
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
-
-    opacity: 1 !important;
-}
-
-
-/* =====================================================
-   SINGLE VALUE
-   ===================================================== */
+/* Selected value */
 
 div[data-testid="stSelectbox"]
+div[data-baseweb="select"]
 div[class*="singleValue"] {
 
-    color: #ffffff !important;
+    color: #111827 !important;
 
-    -webkit-text-fill-color: #ffffff !important;
-
-    opacity: 1 !important;
+    -webkit-text-fill-color: #111827 !important;
 
     font-weight: 600 !important;
+
+    opacity: 1 !important;
 }
 
 
-/* =====================================================
-   ALL SELECTBOX TEXT
-   ===================================================== */
+/* Selected text span */
+
+div[data-testid="stSelectbox"]
+div[data-baseweb="select"]
+span {
+
+    color: #111827 !important;
+
+    -webkit-text-fill-color: #111827 !important;
+
+    opacity: 1 !important;
+}
+
+
+/* All visible selectbox text */
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] * {
 
-    color: #ffffff !important;
+    color: #111827 !important;
 
-    -webkit-text-fill-color: #ffffff !important;
+    -webkit-text-fill-color: #111827 !important;
 
     opacity: 1 !important;
 }
@@ -349,9 +355,9 @@ div[data-baseweb="select"] * {
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] svg {
 
-    fill: #ffffff !important;
+    fill: #334155 !important;
 
-    color: #ffffff !important;
+    color: #334155 !important;
 
     opacity: 1 !important;
 }
@@ -364,16 +370,24 @@ div[data-baseweb="select"] svg {
 div[data-baseweb="popover"] {
 
     background-color: #1e293b !important;
+
+    border-radius: 10px !important;
 }
 
 
-div[data-baseweb="popover"] [role="listbox"] {
+/* Dropdown list */
+
+div[data-baseweb="popover"]
+[role="listbox"] {
 
     background-color: #1e293b !important;
 }
 
 
-div[data-baseweb="popover"] [role="option"] {
+/* Dropdown options */
+
+div[data-baseweb="popover"]
+[role="option"] {
 
     background-color: #1e293b !important;
 
@@ -385,7 +399,10 @@ div[data-baseweb="popover"] [role="option"] {
 }
 
 
-div[data-baseweb="popover"] [role="option"] * {
+/* Dropdown option text */
+
+div[data-baseweb="popover"]
+[role="option"] * {
 
     color: #ffffff !important;
 
@@ -432,13 +449,13 @@ div[data-baseweb="popover"]
 
 .stButton > button {
 
-    width: 100%;
+    width: 100% !important;
 
-    height: 58px;
+    height: 58px !important;
 
-    border: none;
+    border: none !important;
 
-    border-radius: 15px;
+    border-radius: 15px !important;
 
     background:
         linear-gradient(
@@ -450,7 +467,7 @@ div[data-baseweb="popover"]
 
     color: #ffffff !important;
 
-    font-size: 18px;
+    font-size: 18px !important;
 
     font-weight: 800 !important;
 
@@ -561,19 +578,16 @@ hr {
    ===================================================== */
 
 ::-webkit-scrollbar {
-
     width: 8px;
 }
 
 
 ::-webkit-scrollbar-track {
-
     background: #020617;
 }
 
 
 ::-webkit-scrollbar-thumb {
-
     background: #334155;
 
     border-radius: 10px;
@@ -581,23 +595,20 @@ hr {
 
 
 ::-webkit-scrollbar-thumb:hover {
-
     background: #22d3ee;
 }
 
 
 /* =====================================================
-   HIDE MENU
+   HIDE STREAMLIT MENU
    ===================================================== */
 
 #MainMenu {
-
     visibility: hidden;
 }
 
 
 footer {
-
     visibility: hidden;
 }
 
