@@ -124,8 +124,8 @@ h6 {
    LABELS
    ===================================================== */
 
-.stNumberInput label,
-.stSelectbox label {
+div[data-testid="stNumberInput"] label,
+div[data-testid="stSelectbox"] label {
     color: #ffffff !important;
     font-weight: 700 !important;
     font-size: 14px !important;
@@ -222,27 +222,12 @@ div[data-testid="stNumberInput"] button:hover {
 
 
 /* =====================================================
-   SELECTBOX LABEL
+   SELECTBOX
    ===================================================== */
 
-div[data-testid="stSelectbox"] label {
+/* Main selectbox container */
 
-    color: #ffffff !important;
-
-    font-weight: 700 !important;
-
-    font-size: 14px !important;
-
-    opacity: 1 !important;
-}
-
-
-/* =====================================================
-   SELECTBOX WHITE BOX
-   ===================================================== */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"] {
+div[data-testid="stSelectbox"] div[data-baseweb="select"] {
 
     background-color: #f8fafc !important;
 
@@ -254,7 +239,7 @@ div[data-baseweb="select"] {
 }
 
 
-/* Inner selectbox */
+/* Selectbox inner box */
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] > div {
@@ -274,38 +259,10 @@ div[data-baseweb="select"] > div {
 
 
 /* =====================================================
-   SELECTED VALUE - BLACK
+   SELECTBOX SELECTED VALUE - BLACK
    ===================================================== */
 
-/* Combobox */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]
-[role="combobox"] {
-
-    color: #111827 !important;
-
-    -webkit-text-fill-color: #111827 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Combobox children */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]
-[role="combobox"] * {
-
-    color: #111827 !important;
-
-    -webkit-text-fill-color: #111827 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Selected value */
+/* BaseWeb single value */
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"]
@@ -321,11 +278,11 @@ div[class*="singleValue"] {
 }
 
 
-/* Selected text span */
+/* Selected value and its children */
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"]
-span {
+div[class*="singleValue"] * {
 
     color: #111827 !important;
 
@@ -335,10 +292,39 @@ span {
 }
 
 
-/* All visible selectbox text */
+/* Selectbox text */
 
 div[data-testid="stSelectbox"]
-div[data-baseweb="select"] * {
+div[data-baseweb="select"]
+div[role="combobox"] {
+
+    color: #111827 !important;
+
+    -webkit-text-fill-color: #111827 !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Text inside combobox */
+
+div[data-testid="stSelectbox"]
+div[data-baseweb="select"]
+div[role="combobox"] * {
+
+    color: #111827 !important;
+
+    -webkit-text-fill-color: #111827 !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Any span containing selected value */
+
+div[data-testid="stSelectbox"]
+div[data-baseweb="select"]
+span {
 
     color: #111827 !important;
 
@@ -353,13 +339,28 @@ div[data-baseweb="select"] * {
    ===================================================== */
 
 div[data-testid="stSelectbox"]
-div[data-baseweb="select"] svg {
+div[data-baseweb="select"]
+svg {
 
     fill: #334155 !important;
 
     color: #334155 !important;
 
     opacity: 1 !important;
+}
+
+
+/* =====================================================
+   SELECTBOX FOCUS
+   ===================================================== */
+
+div[data-testid="stSelectbox"]
+div[data-baseweb="select"]:focus-within {
+
+    border-color: #2563eb !important;
+
+    box-shadow:
+        0 0 10px rgba(37, 99, 235, 0.25) !important;
 }
 
 
