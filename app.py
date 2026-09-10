@@ -15,610 +15,144 @@ st.set_page_config(
 
 
 # =========================================================
-# CUSTOM CSS
+# LOAD CSS FROM style.css
 # =========================================================
 
-st.markdown("""
-<style>
+def load_css():
+    with open("style.css", "r", encoding="utf-8") as f:
+        css = f.read()
 
-/* =====================================================
-   APP BACKGROUND
-   ===================================================== */
+    st.markdown(
+        f"<style>{css}</style>",
+        unsafe_allow_html=True
+    )
 
-.stApp {
-    background:
-        radial-gradient(
-            circle at 5% 5%,
-            rgba(6, 182, 212, 0.18),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 95% 5%,
-            rgba(124, 58, 237, 0.20),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #020617 0%,
-            #0f172a 50%,
-            #111827 100%
-        );
-}
 
-
-/* =====================================================
-   MAIN CONTAINER
-   ===================================================== */
-
-.block-container {
-    max-width: 980px !important;
-    padding-top: 35px !important;
-    padding-bottom: 50px !important;
-}
-
-
-/* =====================================================
-   HEADINGS
-   ===================================================== */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #ffffff !important;
-}
-
-
-/* =====================================================
-   HEADER
-   ===================================================== */
-
-.title {
-    text-align: center;
-    font-size: 46px;
-    font-weight: 900;
-    color: #ffffff !important;
-    margin-bottom: 5px;
-
-    text-shadow:
-        0 0 15px rgba(34, 211, 238, 0.45);
-}
-
-
-.subtitle {
-    text-align: center;
-    color: #cbd5e1 !important;
-    font-size: 17px;
-    margin-bottom: 32px;
-}
-
-
-/* =====================================================
-   CARD
-   ===================================================== */
-
-.card {
-    background:
-        linear-gradient(
-            145deg,
-            rgba(15, 23, 42, 0.98),
-            rgba(30, 41, 59, 0.94)
-        );
-
-    padding: 30px;
-
-    border-radius: 22px;
-
-    border: 1px solid rgba(56, 189, 248, 0.28);
-
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.45);
-
-    backdrop-filter: blur(15px);
-}
-
-
-/* =====================================================
-   LABELS
-   ===================================================== */
-
-div[data-testid="stNumberInput"] label,
-div[data-testid="stSelectbox"] label {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    font-size: 14px !important;
-    opacity: 1 !important;
-}
-
-
-/* =====================================================
-   NUMBER INPUT
-   ===================================================== */
-
-div[data-testid="stNumberInput"] {
-    color: #111827 !important;
-}
-
-
-/* Number input box */
-
-div[data-testid="stNumberInput"]
-div[data-baseweb="input"] {
-
-    background-color: #f8fafc !important;
-
-    border: 1px solid #cbd5e1 !important;
-
-    border-radius: 12px !important;
-
-    color: #111827 !important;
-
-    min-height: 45px !important;
-}
-
-
-/* Number input value */
-
-div[data-testid="stNumberInput"]
-div[data-baseweb="input"]
-input {
-
-    background-color: #f8fafc !important;
-
-    color: #111827 !important;
-
-    -webkit-text-fill-color: #111827 !important;
-
-    font-size: 15px !important;
-
-    font-weight: 600 !important;
-
-    opacity: 1 !important;
-
-    caret-color: #2563eb !important;
-}
-
-
-/* Number input focus */
-
-div[data-testid="stNumberInput"]
-div[data-baseweb="input"]:focus-within {
-
-    border-color: #2563eb !important;
-
-    box-shadow:
-        0 0 10px rgba(37, 99, 235, 0.25) !important;
-}
-
-
-/* =====================================================
-   NUMBER INPUT BUTTONS
-   ===================================================== */
-
-div[data-testid="stNumberInput"] button {
-
-    background-color: #1e293b !important;
-
-    color: #ffffff !important;
-
-    border: none !important;
-}
-
-
-div[data-testid="stNumberInput"] button svg {
-
-    fill: #ffffff !important;
-
-    color: #ffffff !important;
-}
-
-
-div[data-testid="stNumberInput"] button:hover {
-
-    background-color: #334155 !important;
-}
-
-
-/* =====================================================
-   SELECTBOX
-   ===================================================== */
-
-/* Main selectbox container */
-
-div[data-testid="stSelectbox"] div[data-baseweb="select"] {
-
-    background-color: #f8fafc !important;
-
-    border-radius: 12px !important;
-
-    color: #111827 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Selectbox inner box */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"] > div {
-
-    background-color: #f8fafc !important;
-
-    border: 1px solid #cbd5e1 !important;
-
-    border-radius: 12px !important;
-
-    min-height: 45px !important;
-
-    color: #111827 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* =====================================================
-   SELECTBOX SELECTED VALUE - BLACK
-   ===================================================== */
-
-/* BaseWeb single value */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]
-div[class*="singleValue"] {
-
-    color: #111827 !important;
-
-    -webkit-text-fill-color: #111827 !important;
-
-    font-weight: 600 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Selected value and its children */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]
-div[class*="singleValue"] * {
-
-    color: #111827 !important;
-
-    -webkit-text-fill-color: #111827 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Selectbox text */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]
-div[role="combobox"] {
-
-    color: #111827 !important;
-
-    -webkit-text-fill-color: #111827 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Text inside combobox */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]
-div[role="combobox"] * {
-
-    color: #111827 !important;
-
-    -webkit-text-fill-color: #111827 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Any span containing selected value */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]
-span {
-
-    color: #111827 !important;
-
-    -webkit-text-fill-color: #111827 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* =====================================================
-   SELECTBOX ARROW
-   ===================================================== */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]
-svg {
-
-    fill: #334155 !important;
-
-    color: #334155 !important;
-
-    opacity: 1 !important;
-}
-
-
-/* =====================================================
-   SELECTBOX FOCUS
-   ===================================================== */
-
-div[data-testid="stSelectbox"]
-div[data-baseweb="select"]:focus-within {
-
-    border-color: #2563eb !important;
-
-    box-shadow:
-        0 0 10px rgba(37, 99, 235, 0.25) !important;
-}
-
-
-/* =====================================================
-   DROPDOWN MENU
-   ===================================================== */
-
-div[data-baseweb="popover"] {
-
-    background-color: #1e293b !important;
-
-    border-radius: 10px !important;
-}
-
-
-/* Dropdown list */
-
-div[data-baseweb="popover"]
-[role="listbox"] {
-
-    background-color: #1e293b !important;
-}
-
-
-/* Dropdown options */
-
-div[data-baseweb="popover"]
-[role="option"] {
-
-    background-color: #1e293b !important;
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Dropdown option text */
-
-div[data-baseweb="popover"]
-[role="option"] * {
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
-
-    opacity: 1 !important;
-}
-
-
-/* Dropdown hover */
-
-div[data-baseweb="popover"]
-[role="option"]:hover {
-
-    background-color: #334155 !important;
-
-    color: #ffffff !important;
-}
-
-
-/* Selected dropdown option */
-
-div[data-baseweb="popover"]
-[role="option"][aria-selected="true"] {
-
-    background-color: #2563eb !important;
-
-    color: #ffffff !important;
-}
-
-
-div[data-baseweb="popover"]
-[role="option"][aria-selected="true"] * {
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
-}
-
-
-/* =====================================================
-   PREDICT BUTTON
-   ===================================================== */
-
-.stButton > button {
-
-    width: 100% !important;
-
-    height: 58px !important;
-
-    border: none !important;
-
-    border-radius: 15px !important;
-
-    background:
-        linear-gradient(
-            90deg,
-            #06b6d4,
-            #2563eb,
-            #7c3aed
-        ) !important;
-
-    color: #ffffff !important;
-
-    font-size: 18px !important;
-
-    font-weight: 800 !important;
-
-    box-shadow:
-        0 8px 25px rgba(37, 99, 235, 0.35);
-
-    transition: all 0.3s ease;
-}
-
-
-.stButton > button:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 35px rgba(56, 189, 248, 0.40);
-}
-
-
-.stButton > button p,
-.stButton > button span {
-
-    color: #ffffff !important;
-
-    -webkit-text-fill-color: #ffffff !important;
-}
-
-
-/* =====================================================
-   METRIC
-   ===================================================== */
-
-[data-testid="stMetric"] {
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(30, 41, 59, 0.95),
-            rgba(15, 23, 42, 0.95)
-        ) !important;
-
-    padding: 20px;
-
-    border-radius: 16px;
-
-    border: 1px solid rgba(56, 189, 248, 0.25);
-
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.25);
-}
-
-
-[data-testid="stMetricLabel"] {
-
-    color: #cbd5e1 !important;
-}
-
-
-[data-testid="stMetricValue"] {
-
-    color: #22d3ee !important;
-
-    font-weight: 800 !important;
-}
-
-
-/* =====================================================
-   ALERTS
-   ===================================================== */
-
-div[data-testid="stAlert"] {
-
-    border-radius: 15px;
-}
-
-
-div[data-testid="stAlert"] p {
-
-    color: #ffffff !important;
-}
-
-
-/* =====================================================
-   PROGRESS BAR
-   ===================================================== */
-
-div[data-testid="stProgress"] > div {
-
-    background-color: #1e293b !important;
-
-    border-radius: 20px;
-}
-
-
-/* =====================================================
-   DIVIDER
-   ===================================================== */
-
-hr {
-
-    border-color:
-        rgba(148, 163, 184, 0.20) !important;
-}
-
-
-/* =====================================================
-   SCROLLBAR
-   ===================================================== */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-
-::-webkit-scrollbar-track {
-    background: #020617;
-}
-
-
-::-webkit-scrollbar-thumb {
-    background: #334155;
-
-    border-radius: 10px;
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-    background: #22d3ee;
-}
-
-
-/* =====================================================
-   HIDE STREAMLIT MENU
-   ===================================================== */
-
-#MainMenu {
-    visibility: hidden;
-}
-
-
-footer {
-    visibility: hidden;
-}
-
-</style>
-""", unsafe_allow_html=True)
+load_css()
 
 
 # =========================================================
-# HEADER
+# POPUP FUNCTION
+# =========================================================
+
+@st.dialog("❤️ Heart Disease Prediction Result")
+def show_prediction_popup(prediction, probability):
+
+    # =====================================================
+    # RISK RESULT
+    # =====================================================
+
+    if prediction == 1:
+
+        st.markdown(
+            """
+            <div class="risk-result-box high-risk-box">
+                ⚠️ HIGH RISK OF HEART DISEASE
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        description = (
+            "The model predicts a higher risk based on "
+            "the information provided."
+        )
+
+    else:
+
+        st.markdown(
+            """
+            <div class="risk-result-box low-risk-box">
+                ✅ LOW RISK OF HEART DISEASE
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        description = (
+            "The model predicts a lower risk based on "
+            "the information provided."
+        )
+
+
+    # =====================================================
+    # DESCRIPTION BOX
+    # =====================================================
+
+    st.markdown(
+        f"""
+        <div class="prediction-description">
+            {description}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+    # =====================================================
+    # PROBABILITY BOX
+    # =====================================================
+
+    probability_html = (
+        '<div class="probability-box">'
+        '<p class="probability-title">'
+        '❤️ Heart Disease Risk Probability'
+        '</p>'
+        '<p class="probability-value">'
+        f'{probability:.2f}%'
+        '</p>'
+        '</div>'
+    )
+
+    st.markdown(
+        probability_html,
+        unsafe_allow_html=True
+    )
+
+
+    # =====================================================
+    # PROGRESS BAR
+    # =====================================================
+
+    st.progress(
+        min(
+            max(
+                probability / 100,
+                0.0
+            ),
+            1.0
+        )
+    )
+
+
+    # =====================================================
+    # PROGRESS LABEL
+    # =====================================================
+
+    st.markdown(
+        """
+        <p class="popup-progress-label">
+            Heart Disease Risk Probability
+        </p>
+        """,
+        unsafe_allow_html=True
+    )
+
+
+    # =====================================================
+    # CLOSE BUTTON
+    # =====================================================
+
+    if st.button(
+        "Close",
+        use_container_width=True,
+        key="close_prediction_popup"
+    ):
+        st.rerun()
+
+
+# =========================================================
+# TITLE
 # =========================================================
 
 st.markdown(
@@ -675,7 +209,7 @@ except Exception as e:
 
 
 # =========================================================
-# PATIENT INFORMATION CARD
+# PATIENT INFORMATION
 # =========================================================
 
 st.markdown(
@@ -698,14 +232,14 @@ st.markdown(
 
 
 # =========================================================
-# INPUTS
+# INPUT FIELDS
 # =========================================================
 
 col1, col2 = st.columns(2)
 
 
 # =========================================================
-# LEFT COLUMN
+# COLUMN 1
 # =========================================================
 
 with col1:
@@ -748,7 +282,7 @@ with col1:
 
 
 # =========================================================
-# RIGHT COLUMN
+# COLUMN 2
 # =========================================================
 
 with col2:
@@ -798,7 +332,6 @@ st_slope = st.selectbox(
     key="st_slope"
 )
 
-
 st.markdown(
     "<br>",
     unsafe_allow_html=True
@@ -813,7 +346,6 @@ predict = st.button(
     "🔍  Predict Heart Disease"
 )
 
-
 st.markdown(
     "</div>",
     unsafe_allow_html=True
@@ -827,7 +359,7 @@ st.markdown(
 if predict:
 
     # =====================================================
-    # CREATE INPUT DATA
+    # CREATE DATA
     # =====================================================
 
     data = {
@@ -855,16 +387,11 @@ if predict:
         "ST_Slope_" + st_slope: 1
     }
 
-
-    # =====================================================
-    # DATAFRAME
-    # =====================================================
-
     df = pd.DataFrame([data])
 
 
     # =====================================================
-    # ADD MISSING COLUMNS
+    # MATCH MODEL COLUMNS
     # =====================================================
 
     for column in expected_columns:
@@ -873,16 +400,11 @@ if predict:
 
             df[column] = 0
 
-
-    # =====================================================
-    # CORRECT COLUMN ORDER
-    # =====================================================
-
     df = df[expected_columns]
 
 
     # =====================================================
-    # SCALE DATA
+    # SCALE
     # =====================================================
 
     try:
@@ -909,6 +431,10 @@ if predict:
     )[0]
 
 
+    # =====================================================
+    # PROBABILITY
+    # =====================================================
+
     probability = (
         model.predict_proba(
             df_scaled
@@ -917,26 +443,28 @@ if predict:
 
 
     # =====================================================
-    # RESULT
+    # SHOW POPUP
+    # =====================================================
+
+    show_prediction_popup(
+        prediction,
+        probability
+    )
+
+
+    # =====================================================
+    # ORIGINAL RESULT
     # =====================================================
 
     st.markdown("---")
 
     st.markdown(
         """
-        <h2 style="
-            text-align:center;
-            color:#ffffff !important;
-            margin-bottom:5px;
-        ">
+        <h2 class="result-title">
             📊 Prediction Result
         </h2>
 
-        <p style="
-            text-align:center;
-            color:#94a3b8 !important;
-            margin-bottom:25px;
-        ">
+        <p class="result-subtitle">
             AI-based heart disease risk analysis
         </p>
         """,
@@ -945,7 +473,7 @@ if predict:
 
 
     # =====================================================
-    # RESULT STATUS
+    # RESULT
     # =====================================================
 
     if prediction == 1:
@@ -972,26 +500,26 @@ if predict:
 
 
     # =====================================================
-    # PROGRESS BAR
+    # PROGRESS LABEL
     # =====================================================
 
     st.markdown(
         """
-        <p style="
-            color:#cbd5e1 !important;
-            font-weight:700;
-            margin-top:20px;
-            margin-bottom:5px;
-        ">
+        <p class="risk-probability-label">
             Risk Probability
         </p>
         """,
         unsafe_allow_html=True
     )
 
-
     st.progress(
-        min(max(probability / 100, 0.0), 1.0)
+        min(
+            max(
+                probability / 100,
+                0.0
+            ),
+            1.0
+        )
     )
 
 
@@ -1001,10 +529,7 @@ if predict:
 
     st.markdown(
         """
-        <h3 style="
-            color:#ffffff !important;
-            margin-top:30px;
-        ">
+        <h3 class="patient-summary-title">
             👤 Patient Summary
         </h3>
         """,
@@ -1014,6 +539,10 @@ if predict:
 
     summary1, summary2, summary3 = st.columns(3)
 
+
+    # =====================================================
+    # SUMMARY 1
+    # =====================================================
 
     with summary1:
 
@@ -1028,6 +557,10 @@ if predict:
         )
 
 
+    # =====================================================
+    # SUMMARY 2
+    # =====================================================
+
     with summary2:
 
         st.metric(
@@ -1040,6 +573,10 @@ if predict:
             f"{max_hr}"
         )
 
+
+    # =====================================================
+    # SUMMARY 3
+    # =====================================================
 
     with summary3:
 
@@ -1066,4 +603,14 @@ if predict:
         learning model to estimate heart disease risk from
         the information provided.
         """
+    )
+
+
+    # =====================================================
+    # DISCLAIMER
+    # =====================================================
+
+    st.warning(
+        "⚠️ This application is for educational purposes only "
+        "and should not replace professional medical advice."
     )
