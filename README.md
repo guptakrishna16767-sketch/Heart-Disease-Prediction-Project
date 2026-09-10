@@ -129,8 +129,6 @@ Heart-Disease-Prediction-Project/
 ├── scaler.pkl
 ├── columns.pkl
 │
-├── *.svg
-│
 ├── requirements.txt
 ├── README.md
 └── .gitignore
