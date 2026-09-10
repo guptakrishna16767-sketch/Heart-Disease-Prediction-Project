@@ -182,41 +182,40 @@ joblib
 
 ## 🎯 Key Features
 
-✅ Machine Learning based heart disease prediction
-✅ Logistic Regression classification model
-✅ Prediction probability
-✅ Interactive Streamlit interface
-✅ Custom CSS-based UI
-✅ Patient health information form
-✅ Prediction result popup
-✅ Low-risk and high-risk indication
-✅ Patient summary
-✅ Risk progress indicator
-✅ Model and scaler saved using Joblib
-✅ Custom SVG assets
-✅ Easy local setup
-✅ Ready for online deployment
-✅ Separate Streamlit and CSS files
+* ✅ Machine Learning based heart disease prediction
+* ✅ Logistic Regression classification model
+* ✅ Prediction probability
+* ✅ Interactive Streamlit interface
+* ✅ Custom CSS-based UI
+* ✅ Patient health information form
+* ✅ Prediction result popup
+* ✅ Low-risk and high-risk indication
+* ✅ Patient summary
+* ✅ Risk progress indicator
+* ✅ Model and scaler saved using Joblib
+* ✅ Easy local setup
+* ✅ Ready for online deployment
+* ✅ Separate Streamlit and CSS files
+
 ---
 
 ## 📈 Future Improvements
 
 The project can be improved further by adding:
 
-🔹 Multiple Machine Learning algorithms
-🔹 Model accuracy comparison
-🔹 Random Forest and XGBoost models
-🔹 ROC-AUC score
-🔹 Confusion Matrix
-🔹 Feature importance visualization
-🔹 Interactive analytics dashboard
-🔹 More health-related features
-🔹 Improved model performance
-🔹 Prediction history
-🔹 User authentication
-🔹 Cloud deployment improvements
+* 🔹 Multiple Machine Learning algorithms
+* 🔹 Model accuracy comparison
+* 🔹 Random Forest and XGBoost models
+* 🔹 ROC-AUC score
+* 🔹 Confusion Matrix
+* 🔹 Feature importance visualization
+* 🔹 Interactive analytics dashboard
+* 🔹 More health-related features
+* 🔹 Improved model performance
+* 🔹 Prediction history
+* 🔹 User authentication
+* 🔹 Cloud deployment improvements
 
----
 
 ## ⚠️ Disclaimer
 
