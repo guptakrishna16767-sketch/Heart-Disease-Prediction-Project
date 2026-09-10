@@ -83,6 +83,7 @@ h6 {
 
     padding: 30px;
     border-radius: 22px;
+
     border: 1px solid rgba(56, 189, 248, 0.28);
 
     box-shadow:
@@ -113,29 +114,45 @@ div[data-testid="stNumberInput"] {
     color: #111827 !important;
 }
 
-div[data-testid="stNumberInput"] div[data-baseweb="input"] {
+div[data-testid="stNumberInput"]
+div[data-baseweb="input"] {
+
     background-color: #f8fafc !important;
+
     border: 1px solid #cbd5e1 !important;
+
     border-radius: 12px !important;
+
     color: #111827 !important;
+
     min-height: 45px !important;
 }
 
 div[data-testid="stNumberInput"]
 div[data-baseweb="input"] input {
+
     background-color: #f8fafc !important;
+
     color: #111827 !important;
+
     -webkit-text-fill-color: #111827 !important;
+
     font-size: 15px !important;
+
     font-weight: 600 !important;
+
     opacity: 1 !important;
+
     caret-color: #2563eb !important;
 }
 
 div[data-testid="stNumberInput"]
 div[data-baseweb="input"]:focus-within {
+
     border-color: #2563eb !important;
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.25) !important;
+
+    box-shadow:
+        0 0 10px rgba(37, 99, 235, 0.25) !important;
 }
 
 
@@ -144,17 +161,23 @@ div[data-baseweb="input"]:focus-within {
    ===================================================== */
 
 div[data-testid="stNumberInput"] button {
+
     background-color: #1e293b !important;
+
     color: #ffffff !important;
+
     border: none !important;
 }
 
 div[data-testid="stNumberInput"] button svg {
+
     fill: #ffffff !important;
+
     color: #ffffff !important;
 }
 
 div[data-testid="stNumberInput"] button:hover {
+
     background-color: #334155 !important;
 }
 
@@ -165,73 +188,105 @@ div[data-testid="stNumberInput"] button:hover {
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] {
+
     background-color: #f8fafc !important;
+
     border-radius: 12px !important;
+
     color: #111827 !important;
+
     opacity: 1 !important;
 }
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] > div {
+
     background-color: #f8fafc !important;
+
     border: 1px solid #cbd5e1 !important;
+
     border-radius: 12px !important;
+
     min-height: 45px !important;
+
     color: #111827 !important;
+
     opacity: 1 !important;
 }
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"]
 div[class*="singleValue"] {
+
     color: #111827 !important;
+
     -webkit-text-fill-color: #111827 !important;
+
     font-weight: 600 !important;
+
     opacity: 1 !important;
 }
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"]
 div[class*="singleValue"] * {
+
     color: #111827 !important;
+
     -webkit-text-fill-color: #111827 !important;
+
     opacity: 1 !important;
 }
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"]
 div[role="combobox"] {
+
     color: #111827 !important;
+
     -webkit-text-fill-color: #111827 !important;
+
     opacity: 1 !important;
 }
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"]
 div[role="combobox"] * {
+
     color: #111827 !important;
+
     -webkit-text-fill-color: #111827 !important;
+
     opacity: 1 !important;
 }
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] span {
+
     color: #111827 !important;
+
     -webkit-text-fill-color: #111827 !important;
+
     opacity: 1 !important;
 }
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"] svg {
+
     fill: #334155 !important;
+
     color: #334155 !important;
+
     opacity: 1 !important;
 }
 
 div[data-testid="stSelectbox"]
 div[data-baseweb="select"]:focus-within {
+
     border-color: #2563eb !important;
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.25) !important;
+
+    box-shadow:
+        0 0 10px rgba(37, 99, 235, 0.25) !important;
 }
 
 
@@ -240,43 +295,60 @@ div[data-baseweb="select"]:focus-within {
    ===================================================== */
 
 div[data-baseweb="popover"] {
+
     background-color: #1e293b !important;
+
     border-radius: 10px !important;
 }
 
 div[data-baseweb="popover"] [role="listbox"] {
+
     background-color: #1e293b !important;
 }
 
 div[data-baseweb="popover"] [role="option"] {
+
     background-color: #1e293b !important;
+
     color: #ffffff !important;
+
     -webkit-text-fill-color: #ffffff !important;
+
     opacity: 1 !important;
 }
 
 div[data-baseweb="popover"] [role="option"] * {
+
     color: #ffffff !important;
+
     -webkit-text-fill-color: #ffffff !important;
+
     opacity: 1 !important;
 }
 
 div[data-baseweb="popover"]
 [role="option"]:hover {
+
     background-color: #334155 !important;
+
     color: #ffffff !important;
 }
 
 div[data-baseweb="popover"]
 [role="option"][aria-selected="true"] {
+
     background-color: #2563eb !important;
+
     color: #ffffff !important;
 }
 
 div[data-baseweb="popover"]
 [role="option"][aria-selected="true"] * {
+
     background-color: #2563eb !important;
+
     color: #ffffff !important;
+
     -webkit-text-fill-color: #ffffff !important;
 }
 
@@ -286,9 +358,13 @@ div[data-baseweb="popover"]
    ===================================================== */
 
 .stButton > button {
+
     width: 100% !important;
+
     height: 58px !important;
+
     border: none !important;
+
     border-radius: 15px !important;
 
     background:
@@ -300,7 +376,9 @@ div[data-baseweb="popover"]
         ) !important;
 
     color: #ffffff !important;
+
     font-size: 18px !important;
+
     font-weight: 800 !important;
 
     box-shadow:
@@ -310,6 +388,7 @@ div[data-baseweb="popover"]
 }
 
 .stButton > button:hover {
+
     transform: translateY(-3px);
 
     box-shadow:
@@ -318,7 +397,9 @@ div[data-baseweb="popover"]
 
 .stButton > button p,
 .stButton > button span {
+
     color: #ffffff !important;
+
     -webkit-text-fill-color: #ffffff !important;
 }
 
@@ -328,6 +409,7 @@ div[data-baseweb="popover"]
    ===================================================== */
 
 [data-testid="stMetric"] {
+
     background:
         linear-gradient(
             145deg,
@@ -336,6 +418,7 @@ div[data-baseweb="popover"]
         ) !important;
 
     padding: 20px;
+
     border-radius: 16px;
 
     border: 1px solid rgba(56, 189, 248, 0.25);
@@ -345,11 +428,14 @@ div[data-baseweb="popover"]
 }
 
 [data-testid="stMetricLabel"] {
+
     color: #cbd5e1 !important;
 }
 
 [data-testid="stMetricValue"] {
+
     color: #22d3ee !important;
+
     font-weight: 800 !important;
 }
 
@@ -359,21 +445,35 @@ div[data-baseweb="popover"]
    ===================================================== */
 
 div[data-testid="stAlert"] {
+
     border-radius: 15px;
 }
 
 div[data-testid="stAlert"] p {
+
     color: #ffffff !important;
 }
 
 
 /* =====================================================
-   POPUP
+   POPUP / DIALOG
    ===================================================== */
 
 div[role="dialog"] {
+
     background-color: #ffffff !important;
+
     border-radius: 20px !important;
+}
+
+
+/* =====================================================
+   POPUP TEXT
+   ===================================================== */
+
+div[role="dialog"] p {
+
+    color: #374151 !important;
 }
 
 
@@ -387,120 +487,239 @@ div[role="dialog"] h3,
 div[role="dialog"] h4,
 div[role="dialog"] h5,
 div[role="dialog"] h6 {
+
     color: #111827 !important;
 }
 
 
 /* =====================================================
-   LOW / HIGH RISK BOX
+   RISK RESULT BOX
+   IMPORTANT:
+   No dependency on div[role="dialog"]
    ===================================================== */
 
-div[role="dialog"] .risk-result-box {
-    padding: 16px 18px;
-    border-radius: 12px;
-    margin: 8px 0 14px 0;
+.risk-result-box {
 
-    font-size: 15px;
-    font-weight: 800;
+    display: block !important;
 
-    line-height: 1.4;
+    width: 100% !important;
 
-    color: #111827 !important;
+    box-sizing: border-box !important;
+
+    padding: 16px 18px !important;
+
+    margin: 8px 0 14px 0 !important;
+
+    border-radius: 12px !important;
+
+    font-size: 15px !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1.4 !important;
+
+    text-align: left !important;
+
+    opacity: 1 !important;
 }
 
 
-/* LOW RISK */
+/* =====================================================
+   LOW RISK BOX
+   LIGHT GREEN
+   ===================================================== */
 
-div[role="dialog"] .low-risk-box {
+.risk-result-box.low-risk-box {
+
+    background: #dcfce7 !important;
+
     background-color: #dcfce7 !important;
+
     border: 1px solid #86efac !important;
+
     color: #166534 !important;
+
+    -webkit-text-fill-color: #166534 !important;
 }
 
 
-/* HIGH RISK */
+/* Force text inside LOW RISK box */
 
-div[role="dialog"] .high-risk-box {
+.risk-result-box.low-risk-box,
+.risk-result-box.low-risk-box * {
+
+    color: #166534 !important;
+
+    -webkit-text-fill-color: #166534 !important;
+}
+
+
+/* =====================================================
+   HIGH RISK BOX
+   LIGHT RED
+   ===================================================== */
+
+.risk-result-box.high-risk-box {
+
+    background: #fee2e2 !important;
+
     background-color: #fee2e2 !important;
+
     border: 1px solid #fca5a5 !important;
+
     color: #991b1b !important;
+
+    -webkit-text-fill-color: #991b1b !important;
+}
+
+
+/* Force text inside HIGH RISK box */
+
+.risk-result-box.high-risk-box,
+.risk-result-box.high-risk-box * {
+
+    color: #991b1b !important;
+
+    -webkit-text-fill-color: #991b1b !important;
 }
 
 
 /* =====================================================
    DESCRIPTION BOX
+   LIGHT YELLOW
    ===================================================== */
 
-div[role="dialog"] .prediction-description {
+.prediction-description {
+
+    display: block !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    background: #fef9c3 !important;
+
     background-color: #fef9c3 !important;
 
     border: 1px solid #fde68a !important;
 
-    padding: 14px 16px;
+    padding: 14px 16px !important;
 
-    border-radius: 12px;
+    border-radius: 12px !important;
 
-    margin: 8px 0 18px 0;
+    margin: 8px 0 18px 0 !important;
 
     color: #111827 !important;
 
-    font-size: 14px;
+    -webkit-text-fill-color: #111827 !important;
 
-    font-weight: 500;
+    font-size: 14px !important;
 
-    line-height: 1.5;
+    font-weight: 500 !important;
+
+    line-height: 1.5 !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Force description text */
+
+.prediction-description,
+.prediction-description * {
+
+    color: #111827 !important;
+
+    -webkit-text-fill-color: #111827 !important;
 }
 
 
 /* =====================================================
    PROBABILITY BOX
+   SKY BLUE
    ===================================================== */
 
-div[role="dialog"] .probability-box {
+.probability-box {
+
+    display: block !important;
+
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    background: #bae6fd !important;
+
     background-color: #bae6fd !important;
 
     border: 1px solid #7dd3fc !important;
 
-    padding: 20px;
+    padding: 20px !important;
 
-    border-radius: 14px;
+    border-radius: 14px !important;
 
-    margin: 12px 0 10px 0;
+    margin: 12px 0 10px 0 !important;
 
     color: #0f172a !important;
+
+    -webkit-text-fill-color: #0f172a !important;
 
     box-shadow:
-        0 5px 15px rgba(14, 165, 233, 0.15);
+        0 5px 15px rgba(14, 165, 233, 0.15) !important;
 
-    text-align: left;
+    text-align: left !important;
+
+    opacity: 1 !important;
 }
 
 
-/* Probability title */
+/* =====================================================
+   PROBABILITY TITLE
+   ===================================================== */
 
-div[role="dialog"] .probability-title {
+.probability-title {
+
     color: #0f172a !important;
 
-    font-size: 15px;
+    -webkit-text-fill-color: #0f172a !important;
 
-    font-weight: 800;
+    font-size: 15px !important;
 
-    margin: 0 0 8px 0;
+    font-weight: 800 !important;
+
+    margin: 0 0 8px 0 !important;
+
+    line-height: 1.4 !important;
 }
 
 
-/* Probability value */
+/* =====================================================
+   PROBABILITY VALUE
+   ===================================================== */
 
-div[role="dialog"] .probability-value {
+.probability-value {
+
     color: #0369a1 !important;
 
-    font-size: 34px;
+    -webkit-text-fill-color: #0369a1 !important;
 
-    font-weight: 900;
+    font-size: 34px !important;
 
-    line-height: 1.1;
+    font-weight: 900 !important;
 
-    margin: 0;
+    line-height: 1.1 !important;
+
+    margin: 0 !important;
+}
+
+
+/* =====================================================
+   PROBABILITY BOX - FORCE CHILDREN
+   ===================================================== */
+
+.probability-box,
+.probability-box * {
+
+    opacity: 1 !important;
 }
 
 
@@ -508,16 +727,32 @@ div[role="dialog"] .probability-value {
    POPUP PROGRESS
    ===================================================== */
 
-div[role="dialog"]
+div[data-testid="stProgress"] {
+
+    margin-top: 8px !important;
+
+    margin-bottom: 4px !important;
+}
+
+
+/* Progress background */
+
 div[data-testid="stProgress"] > div {
+
     background-color: #dbeafe !important;
+
     border-radius: 20px !important;
 }
 
-div[role="dialog"]
+
+/* Progress fill */
+
 div[data-testid="stProgress"]
 div[role="progressbar"] {
+
     background-color: #0284c7 !important;
+
+    border-radius: 20px !important;
 }
 
 
@@ -526,20 +761,30 @@ div[role="progressbar"] {
    ===================================================== */
 
 .popup-progress-label {
+
     color: #374151 !important;
-    font-size: 13px;
-    font-weight: 600;
-    margin-top: 4px;
-    margin-bottom: 15px;
+
+    -webkit-text-fill-color: #374151 !important;
+
+    font-size: 13px !important;
+
+    font-weight: 600 !important;
+
+    margin-top: 4px !important;
+
+    margin-bottom: 15px !important;
 }
 
 
 /* =====================================================
-   POPUP CLOSE BUTTON
+   CLOSE BUTTON
    ===================================================== */
 
 div[role="dialog"] .stButton > button {
+
     color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
 }
 
 
@@ -548,8 +793,10 @@ div[role="dialog"] .stButton > button {
    ===================================================== */
 
 div[data-testid="stProgress"] > div {
+
     background-color: #1e293b !important;
-    border-radius: 20px;
+
+    border-radius: 20px !important;
 }
 
 
@@ -558,14 +805,20 @@ div[data-testid="stProgress"] > div {
    ===================================================== */
 
 .result-title {
+
     text-align: center;
+
     color: #ffffff !important;
+
     margin-bottom: 5px;
 }
 
 .result-subtitle {
+
     text-align: center;
+
     color: #94a3b8 !important;
+
     margin-bottom: 25px;
 }
 
@@ -575,9 +828,13 @@ div[data-testid="stProgress"] > div {
    ===================================================== */
 
 .risk-probability-label {
+
     color: #cbd5e1 !important;
+
     font-weight: 700;
+
     margin-top: 20px;
+
     margin-bottom: 5px;
 }
 
@@ -587,7 +844,9 @@ div[data-testid="stProgress"] > div {
    ===================================================== */
 
 .patient-summary-title {
+
     color: #ffffff !important;
+
     margin-top: 30px;
 }
 
@@ -597,7 +856,9 @@ div[data-testid="stProgress"] > div {
    ===================================================== */
 
 hr {
-    border-color: rgba(148, 163, 184, 0.20) !important;
+
+    border-color:
+        rgba(148, 163, 184, 0.20) !important;
 }
 
 
@@ -606,19 +867,24 @@ hr {
    ===================================================== */
 
 ::-webkit-scrollbar {
+
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
+
     background: #020617;
 }
 
 ::-webkit-scrollbar-thumb {
+
     background: #334155;
+
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+
     background: #22d3ee;
 }
 
@@ -628,9 +894,11 @@ hr {
    ===================================================== */
 
 #MainMenu {
+
     visibility: hidden;
 }
 
 footer {
+
     visibility: hidden;
 }
